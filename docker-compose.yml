@@ -1,0 +1,12 @@
+version: '3'
+services:
+  jupyter-notebook:
+    build: .
+    volumes:
+      - ./data_science_notebooks:/home/jovyan
+    ports:
+      - "10000:8888"
+  jupyter-postgres:
+    image: mdillon/postgis:9.5
+    ports:
+        - "5435:5432"
